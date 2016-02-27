@@ -20,7 +20,7 @@ import info.archinnov.achilles.annotations.Column;
 
 import java.util.Date;
 
-public class AbstractEntity {
+public abstract class AbstractEntity {
 
 
     @Column
