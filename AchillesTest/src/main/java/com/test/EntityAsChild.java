@@ -17,42 +17,33 @@
 package com.test;
 
 import info.archinnov.achilles.annotations.Column;
+import info.archinnov.achilles.annotations.PartitionKey;
+import info.archinnov.achilles.annotations.Table;
 
-import java.util.Date;
+@Table(table = "entity_child")
+public class EntityAsChild extends AbstractEntity {
 
-public class AbstractEntity {
+
+    @PartitionKey
+    protected Long id;
+    @Column("child_value")
+    private String anotherValue;
 
 
-    @Column
-    protected Date date1;
 
-    @Column
-    protected Date date2;
-    @Column
-    protected Date date3;
-
-    public Date getDate1() {
-        return date1;
+    public Long getId() {
+        return id;
     }
 
-
-    public Date getDate3() {
-        return date3;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public void setDate3(Date date3) {
-        this.date3 = date3;
+    public String getAnotherValue() {
+        return anotherValue;
     }
 
-    public void setDate1(Date date1) {
-        this.date1 = date1;
-    }
-
-    public Date getDate2() {
-        return date2;
-    }
-
-    public void setDate2(Date date2) {
-        this.date2 = date2;
+    public void setAnotherValue(String anotherValue) {
+        this.anotherValue = anotherValue;
     }
 }
